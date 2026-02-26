@@ -58,7 +58,7 @@ export default function AboutPage() {
                     <div className="col-span-4 grid grid-rows-2 gap-6">
                         <div className="overflow-hidden rounded-sm border border-gold/10">
                             <img
-                                src="https://images.unsplash.com/photo-1600585154340-be61ead1833c?q=80&w=2070&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2070&auto=format&fit=crop"
                                 alt="Luxury Interior"
                                 className="w-full h-full object-cover"
                             />
