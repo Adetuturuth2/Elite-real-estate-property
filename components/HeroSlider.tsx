@@ -74,10 +74,9 @@ const HeroSlider = () => {
                             <div className="relative h-full w-full">
                                 {/* Image with Dark Overlay */}
                                 <div
-                                    className="absolute inset-0 bg-cover bg-center transition-transform duration-[10000ms]"
+                                    className={`absolute inset-0 bg-cover bg-center transition-transform duration-[10000ms] ease-out ${isActive ? 'scale-110' : 'scale-100'}`}
                                     style={{
                                         backgroundImage: `url(${slide.image})`,
-                                        transform: isActive ? 'scale(1.1)' : 'scale(1)'
                                     }}
                                 >
                                     <div className="absolute inset-0 bg-black/50" />
@@ -85,44 +84,53 @@ const HeroSlider = () => {
 
                                 {/* Content */}
                                 <div className="relative h-full flex items-center justify-center text-center px-6">
-                                    <div className="max-w-4xl">
-                                        <motion.h1
-                                            initial={{ opacity: 0, y: 30 }}
-                                            animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                                            transition={{ duration: 0.8, delay: 0.2 }}
-                                            className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-6 leading-tight"
-                                        >
-                                            {slide.headline}
-                                        </motion.h1>
-                                        <motion.p
-                                            initial={{ opacity: 0, y: 20 }}
-                                            animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                                            transition={{ duration: 0.8, delay: 0.4 }}
-                                            className="text-lg md:text-xl text-soft-white/90 mb-10 max-w-2xl mx-auto font-light tracking-wide"
-                                        >
-                                            {slide.subtext}
-                                        </motion.p>
-                                        <motion.div
-                                            initial={{ opacity: 0, y: 20 }}
-                                            animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                                            transition={{ duration: 0.8, delay: 0.6 }}
-                                            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-                                        >
-                                            <Link
-                                                href={slide.href1}
-                                                className="w-full sm:w-auto bg-gold text-navy px-10 py-4 rounded-sm font-bold uppercase tracking-[0.2em] text-xs hover:bg-gold-dark hover:shadow-[0_0_20px_rgba(198,167,94,0.6)] transition-all transform active:scale-95"
-                                            >
-                                                {slide.cta1}
-                                            </Link>
-                                            {slide.cta2 && (
-                                                <Link
-                                                    href={slide.href2}
-                                                    className="w-full sm:w-auto border border-white/30 backdrop-blur-sm text-white px-10 py-4 rounded-sm font-bold uppercase tracking-[0.2em] text-xs hover:bg-white hover:text-navy transition-all transform active:scale-95"
-                                                >
-                                                    {slide.cta2}
-                                                </Link>
+                                    <div className="max-w-4xl overflow-hidden">
+                                        <AnimatePresence mode="wait">
+                                            {isActive && (
+                                                <div key={slide.id}>
+                                                    <motion.h1
+                                                        initial={{ opacity: 0, y: 40 }}
+                                                        animate={{ opacity: 1, y: 0 }}
+                                                        exit={{ opacity: 0, y: -40 }}
+                                                        transition={{ duration: 0.8, ease: "easeOut" }}
+                                                        className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-6 leading-tight"
+                                                    >
+                                                        {slide.headline}
+                                                    </motion.h1>
+                                                    <motion.p
+                                                        initial={{ opacity: 0, y: 30 }}
+                                                        animate={{ opacity: 1, y: 0 }}
+                                                        exit={{ opacity: 0, y: -30 }}
+                                                        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                                                        className="text-lg md:text-xl text-soft-white/90 mb-10 max-w-2xl mx-auto font-light tracking-wide"
+                                                    >
+                                                        {slide.subtext}
+                                                    </motion.p>
+                                                    <motion.div
+                                                        initial={{ opacity: 0, y: 20 }}
+                                                        animate={{ opacity: 1, y: 0 }}
+                                                        exit={{ opacity: 0, y: -20 }}
+                                                        transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+                                                        className="flex flex-col sm:flex-row items-center justify-center gap-4"
+                                                    >
+                                                        <Link
+                                                            href={slide.href1}
+                                                            className="w-full sm:w-auto bg-gold text-navy px-10 py-4 rounded-sm font-bold uppercase tracking-[0.2em] text-xs hover:bg-gold-dark hover:shadow-[0_0_20px_rgba(198,167,94,0.6)] transition-all transform active:scale-95"
+                                                        >
+                                                            {slide.cta1}
+                                                        </Link>
+                                                        {slide.cta2 && (
+                                                            <Link
+                                                                href={slide.href2}
+                                                                className="w-full sm:w-auto border border-white/30 backdrop-blur-sm text-white px-10 py-4 rounded-sm font-bold uppercase tracking-[0.2em] text-xs hover:bg-white hover:text-navy transition-all transform active:scale-95"
+                                                            >
+                                                                {slide.cta2}
+                                                            </Link>
+                                                        )}
+                                                    </motion.div>
+                                                </div>
                                             )}
-                                        </motion.div>
+                                        </AnimatePresence>
                                     </div>
                                 </div>
                             </div>

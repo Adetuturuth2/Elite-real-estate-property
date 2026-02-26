@@ -25,7 +25,7 @@ const properties = [
         price: "$3,450,000",
         type: "Buy",
         color: "#C6A75E",
-        image: "https://images.unsplash.com/photo-1567496898731-f39b119108d4?q=80&w=400&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=400&auto=format&fit=crop"
     },
     {
         id: 2,
@@ -35,7 +35,7 @@ const properties = [
         price: "$45/sqft",
         type: "Lease",
         color: "#F97316",
-        image: "https://images.unsplash.com/photo-1497366216548-fa86236b1c2a?q=80&w=400&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=400&auto=format&fit=crop"
     },
     {
         id: 3,

@@ -69,7 +69,7 @@ export default function LeasePage() {
                 {[
                     "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2070&auto=format&fit=crop",
                     "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop",
-                    "https://images.unsplash.com/photo-1436450412740-6b988f486c6b?q=80&w=2070&auto=format&fit=crop"
+                    "https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070&auto=format&fit=crop"
                 ].map((imgUrl, i) => (
                     <div key={i} className="group flex flex-col glass border-white/5 hover:border-gold/30 transition-all duration-500 overflow-hidden">
                         <div className="relative h-64 overflow-hidden">

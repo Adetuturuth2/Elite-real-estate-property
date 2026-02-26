@@ -114,7 +114,7 @@ export default function HomePage() {
               beds: 3,
               baths: 4,
               sqft: "3,800",
-              image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop",
+              image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2070&auto=format&fit=crop",
               desc: "Perched above the city skyline, this penthouse redefines urban luxury living."
             }
           ].map((property, i) => (
